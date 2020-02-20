@@ -37,13 +37,25 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " account the surrounding letters
 iabbrev foofffff const foo =
 
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>f"
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>f'
-vnoremap ' <esc>`<i'<esc>`>a'<esc>
-vnoremap " <esc>`<i"<esc>`>a"<esc>
-vnoremap " <esc>`<i"<esc>`>a"<esc>
-vnoremap {} <esc>`<O{<esc>`>o}<esc>vi{>
-vnoremap [] <esc>`<O[<esc>`>o]<esc>vi[>
+" wrap single word in quotes in normal mode
+nnoremap <leader>' viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
+" wrap visual block in quotes
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+
+" wrap visual block in brackets
+vnoremap <leader>() <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>{} <esc>`>a}<esc>`<i{<esc>
+vnoremap <leader>[] <esc>`>a]<esc>`<i[<esc>
+
+" place brackets above and below block and indent block
+vnoremap <leader>b{} <esc>`<O{<esc>`>o}<esc>vi{>
+vnoremap <leader>b[] <esc>`<O[<esc>`>o]<esc>vi[>
+vnoremap <leader>b() <esc>`<O(<esc>`>o)<esc>vi(>
+
+" shift to start or end of line
 nnoremap H ^
 nnoremap L $
 
