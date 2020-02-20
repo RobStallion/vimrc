@@ -64,6 +64,12 @@ nnoremap L $
 
 " Vim terminal commands
 let g:bufferNo = 0
+let g:termCmd = "mit-scheme < " . eval('@%') . "\<cr>"
+
+function SendFileToBuffer()
+  call Term()
+  call term_sendkeys(eval(g:bufferNo), g:termCmd)
+endfunction
 
 function SendToBuffer()
   call term_sendkeys(eval(g:bufferNo), @")
@@ -76,8 +82,16 @@ function Term()
 endfunction
 
 nnoremap <c-v>t :call Term()<cr>
-nnoremap sltb yy:call SendToBuffer()<cr>
-nnoremap stb yip:call SendToBuffer()<cr>
-vnoremap stb y:call SendToBuffer()<cr>
+nnoremap <leader>lb yy:call SendToBuffer()<cr>
+nnoremap <leader>sb yip:call SendToBuffer()<cr>
+vnoremap <leader>sb y:call SendToBuffer()<cr>
 
 tnoremap <esc><esc> <c-w>:q!
+" Vim terminal commands end
+
+nnoremap <leader>ft :echom &filetype<cr>
+
+
+" if &filetype ==# 'scheme'
+"   inoremap ( ()<esc>i
+" endif
