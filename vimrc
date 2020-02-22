@@ -1,5 +1,6 @@
 " MY CONFIG
 syntax on
+hi MatchParen cterm=bold ctermbg=none ctermfg=blue
 
 " Remap keys
 nmap ; :
@@ -42,18 +43,18 @@ nnoremap <leader>' viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
 " wrap visual block in quotes
-vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
-vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap ' <esc>`>a'<esc>`<i'<esc>
+vnoremap " <esc>`>a"<esc>`<i"<esc>
 
 " wrap visual block in brackets
-vnoremap <leader>() <esc>`>a)<esc>`<i(<esc>
+vnoremap () <esc>`>a)<esc>`<i(<esc>f)
 vnoremap <leader>{} <esc>`>a}<esc>`<i{<esc>
 vnoremap <leader>[] <esc>`>a]<esc>`<i[<esc>
 
 " place brackets above and below block and indent block
 vnoremap <leader>b{} <esc>`<O{<esc>`>o}<esc>vi{>
 vnoremap <leader>b[] <esc>`<O[<esc>`>o]<esc>vi[>
-vnoremap <leader>b() <esc>`<O(<esc>`>o)<esc>vi(>
+vnoremap b() <esc>`<O(<esc>`>o)<esc>vi(>
 
 " shift to start or end of line
 nnoremap H ^
@@ -64,16 +65,7 @@ nnoremap L $
 
 " Vim terminal commands
 let g:bufferNo = 0
-let g:termCmd = "mit-scheme < " . eval('@%') . "\<cr>"
-
-function SendFileToBuffer()
-  call Term()
-  call term_sendkeys(eval(g:bufferNo), g:termCmd)
-endfunction
-
-function SendToBuffer()
-  call term_sendkeys(eval(g:bufferNo), @")
-endfunction
+let g:termCmd = "mit-scheme --quiet < " . eval('@%') . "\<cr>"
 
 function Term()
   execute ':vert term'
@@ -81,10 +73,20 @@ function Term()
   echom g:bufferNo
 endfunction
 
+function SendToBuffer()
+  call term_sendkeys(eval(g:bufferNo), @")
+endfunction
+
+function SendFileToBuffer()
+  call Term()
+  call term_sendkeys(eval(g:bufferNo), g:termCmd)
+endfunction
+
 nnoremap <c-v>t :call Term()<cr>
 nnoremap <leader>lb yy:call SendToBuffer()<cr>
 nnoremap <leader>sb yip:call SendToBuffer()<cr>
 vnoremap <leader>sb y:call SendToBuffer()<cr>
+nnoremap <leader>fb :call SendFileToBuffer()<cr>
 
 tnoremap <esc><esc> <c-w>:q!
 " Vim terminal commands end
@@ -92,6 +94,7 @@ tnoremap <esc><esc> <c-w>:q!
 nnoremap <leader>ft :echom &filetype<cr>
 
 
-" if &filetype ==# 'scheme'
-"   inoremap ( ()<esc>i
-" endif
+if &filetype ==# 'scheme'
+  nnoremap <leader>/ I;;; <esc>
+  " inoremap ( ()<esc>i
+endif
