@@ -98,3 +98,4 @@ nnoremap <leader>ft :echom &filetype<cr>
 tnoremap <esc><esc> <c-w>:q!
 " set buffer width
 tnoremap !!! <c-w>:vertical resize 80<cr>
+tnoremap <c-k> clear<cr>
