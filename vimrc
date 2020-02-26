@@ -45,11 +45,12 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 " wrap visual block in quotes
 vnoremap ' <esc>`>a'<esc>`<i'<esc>
 vnoremap " <esc>`>a"<esc>`<i"<esc>
+vnoremap ` <esc>`>a`<esc>`<i`<esc>
 
 " wrap visual block in brackets
 vnoremap () <esc>`>a)<esc>`<i(<esc>f)
-vnoremap <leader>{} <esc>`>a}<esc>`<i{<esc>
-vnoremap <leader>[] <esc>`>a]<esc>`<i[<esc>
+vnoremap {} <esc>`>a}<esc>`<i{<esc>
+vnoremap [] <esc>`>a]<esc>`<i[<esc>
 
 " place brackets above and below block and indent block
 vnoremap <leader>b{} <esc>`<O{<esc>`>o}<esc>vi{>
@@ -88,13 +89,12 @@ nnoremap <leader>sb yip:call SendToBuffer()<cr>
 vnoremap <leader>sb y:call SendToBuffer()<cr>
 nnoremap <leader>fb :call SendFileToBuffer()<cr>
 
-tnoremap <esc><esc> <c-w>:q!
 " Vim terminal commands end
 
 nnoremap <leader>ft :echom &filetype<cr>
 
-
-if &filetype ==# 'scheme'
-  nnoremap <leader>/ I;;; <esc>
-  " inoremap ( ()<esc>i
-endif
+" Terminal remappings
+" quick quit
+tnoremap <esc><esc> <c-w>:q!
+" set buffer width
+tnoremap !!! <c-w>:vertical resize 80<cr>
