@@ -1,12 +1,26 @@
 " MY CONFIG
-syntax on
-hi MatchParen cterm=bold ctermbg=none ctermfg=blue
+
+set nocompatible
+
+syntax enable
+filetype plugin on
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when wn tab complete
+set wildmenu
+
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
+
+set backspace=indent,eol,start
+set smartindent
 
 " Remap keys
 nmap ; :
 
 " Spaces & Tabs
-
 set tabstop=2 " number of visual spaces per TAB
 set softtabstop=2 " number of spaces in tab when editing
 set expandtab " tabs are spaces
@@ -26,8 +40,7 @@ let g:ale_linters = {
 inoremap <c-u> <esc>viw~A
 nnoremap <c-u> viw~e
 
-" let mapleader = "\<space>"
-let mapleader = "\\"
+let mapleader = "\<space>"
 let maplocalleader = "\\"
 
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
@@ -39,8 +52,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 iabbrev foofffff const foo =
 
 " wrap single word in quotes in normal mode
-nnoremap <leader>' viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 " wrap visual block in quotes
 vnoremap ' <esc>`>a'<esc>`<i'<esc>
@@ -89,13 +102,17 @@ nnoremap <leader>sb yip:call SendToBuffer()<cr>
 vnoremap <leader>sb y:call SendToBuffer()<cr>
 nnoremap <leader>fb :call SendFileToBuffer()<cr>
 
+" quick quit
+tnoremap <esc><esc> <c-w>:q!
+
+tnoremap <c-k> clear<cr>
+tnoremap jjkk <c-w>N
+
 " Vim terminal commands end
 
 nnoremap <leader>ft :echom &filetype<cr>
 
 " Terminal remappings
-" quick quit
-tnoremap <esc><esc> <c-w>:q!
-" set buffer width
-tnoremap !!! <c-w>:vertical resize 80<cr>
-tnoremap <c-k> clear<cr>
+
+" copy to clipboard
+vnoremap Y "+y
