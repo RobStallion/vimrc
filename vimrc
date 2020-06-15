@@ -30,10 +30,6 @@ set showcmd " show command in bottom bar
 set cursorline " highlight current line
 set hlsearch " highlight search
 
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-
 " LEARN VIMSCRIPT THE HARD WAY
 " My remappings
 " Change case of current word
@@ -52,8 +48,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 iabbrev foofffff const foo =
 
 " wrap single word in quotes in normal mode
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
 " wrap visual block in quotes
 vnoremap ' <esc>`>a'<esc>`<i'<esc>
@@ -107,12 +103,9 @@ tnoremap <esc><esc> <c-w>:q!
 
 tnoremap <c-k> clear<cr>
 tnoremap jjkk <c-w>N
-
-" Vim terminal commands end
-
 nnoremap <leader>ft :echom &filetype<cr>
 
-" Terminal remappings
+" Vim terminal commands end
 
 " copy to clipboard
 vnoremap Y "+y
