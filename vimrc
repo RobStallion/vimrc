@@ -109,3 +109,8 @@ nnoremap <leader>ft :echom &filetype<cr>
 
 " copy to clipboard
 vnoremap Y "+y
+
+" SpellBad       xxx term=reverse ctermbg=9 gui=undercurl guisp=Red
+" SpellCap       xxx term=reverse ctermbg=12 gui=undercurl guisp=Blue
+hi SpellBad ctermfg=9 ctermbg=0
+hi SpellCap ctermfg=12 ctermbg=0
