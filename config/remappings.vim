@@ -1,6 +1,6 @@
 let mapleader=" "
 
-nmap ; :
+nnoremap ; :
 
 " edit & source vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<cr> 
