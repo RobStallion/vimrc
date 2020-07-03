@@ -1,0 +1,6 @@
+[submodule "pack/my-plugins/start/vim-surround"]
+	path = pack/my-plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/my-plugins/start/vim-commentary"]
+	path = pack/my-plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
