@@ -7,3 +7,6 @@
 [submodule "pack/my-plugins/start/ale"]
 	path = pack/my-plugins/start/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "pack/my-plugins/start/vim-ripgrep"]
+	path = pack/my-plugins/start/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep.git
