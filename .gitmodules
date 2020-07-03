@@ -4,3 +4,6 @@
 [submodule "pack/my-plugins/start/vim-commentary"]
 	path = pack/my-plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "pack/my-plugins/start/ale"]
+	path = pack/my-plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
