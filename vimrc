@@ -7,6 +7,8 @@ source ~/.vim/config/colours.vim
 source ~/.vim/config/remappings.vim
 
 
-" things I'm currently testing
-nnoremap <c-u> viwU
-nnoremap <c-l> viwu
+" THINGS I'M CURRENTLY TESTING
+
+" checks the filetype is a react file before allowing abbreviation
+" abbreviation to create arrow function
+autocmd FileType javascriptreact iabbrev afunc constfoo = () => {}<esc>?foo<cr>cw
