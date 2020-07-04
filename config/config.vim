@@ -5,7 +5,6 @@ set shiftwidth=2 " shift with < > does 2 spaces
 set expandtab " converts tab to spaces
 set smartindent " does best to not be bad at indenting
 set number " set line numbers
-set nowrap " no wrapping lines
 set ignorecase " ignore case in search patterns
 set smartcase " override ignorecase if search contains upper case char
 set noswapfile " no swp files :D
@@ -15,3 +14,4 @@ set colorcolumn=100 " set a column off 100 length
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
+set laststatus=2 " adds status bar to bottom of screen
