@@ -8,6 +8,12 @@ source ~/.vim/config/remappings.vim
 
 " THINGS I'M CURRENTLY TESTING
 
+" jump to the begining of a line
+nnoremap H ^
+
+" jump to the end of a line
+nnoremap L $
+
 " checks the filetype is a js file before allowing abbreviation
 " buffer ensures command is only available in local buffer
 " abbreviation to create arrow function
