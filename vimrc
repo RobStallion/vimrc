@@ -14,6 +14,47 @@ nnoremap H ^
 " jump to the end of a line
 nnoremap L $
 
+" create operators to select in or around next ( { [ ' "
+" in == in next
+" il == in last
+" look into how to replace f with / (or search) to allow these to be called from a different line
+
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap in) :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi)<cr>
+onoremap il) :<c-u>normal! F)vi)<cr>
+onoremap an( :<c-u>normal! f(va(<cr>
+onoremap an) :<c-u>normal! f(va(<cr>
+onoremap al( :<c-u>normal! F)va)<cr>
+onoremap al) :<c-u>normal! F)va)<cr>
+
+onoremap in{ :<c-u>normal! f{vi{<cr>
+onoremap in} :<c-u>normal! f{vi{<cr>
+onoremap il{ :<c-u>normal! F}vi}<cr>
+onoremap il} :<c-u>normal! F}vi}<cr>
+onoremap an{ :<c-u>normal! f{va{<cr>
+onoremap an} :<c-u>normal! f{va{<cr>
+onoremap al{ :<c-u>normal! F}va}<cr>
+onoremap al} :<c-u>normal! F}va}<cr>
+
+onoremap in[ :<c-u>normal! f[vi[<cr>
+onoremap in] :<c-u>normal! f[vi[<cr>
+onoremap il[ :<c-u>normal! F]vi]<cr>
+onoremap il] :<c-u>normal! F]vi]<cr>
+onoremap an[ :<c-u>normal! f[va[<cr>
+onoremap an] :<c-u>normal! f[va[<cr>
+onoremap al[ :<c-u>normal! F]va]<cr>
+onoremap al] :<c-u>normal! F]va]<cr>
+
+onoremap in' :<c-u>normal! f'vi'<cr>
+onoremap in" :<c-u>normal! f"vi"<cr>
+onoremap il' :<c-u>normal! F'vi'<cr>
+onoremap il" :<c-u>normal! F"vi"<cr>
+onoremap an' :<c-u>normal! f'va'<cr>
+onoremap an" :<c-u>normal! f"va"<cr>
+onoremap al' :<c-u>normal! F'va'<cr>
+onoremap al" :<c-u>normal! F"va"<cr>
+
 " checks the filetype is a js file before allowing abbreviation
 " buffer ensures command is only available in local buffer
 " abbreviation to create arrow function
