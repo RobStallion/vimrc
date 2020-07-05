@@ -17,8 +17,12 @@ nnoremap L $
 " create operators to select in or around next ( { [ ' "
 " in == in next
 " il == in last
-onoremap in( :<c-u>execute "normal! /(\r:noh\rvi("<cr>
-onoremap il( :<c-u>execute "normal! ?)\r:noh\rvi)"<cr>
+
+augroup filetype_javascript
+  autocmd! filetype_javascript
+  autocmd FileType javascript onoremap <buffer> in( :<c-u>execute "normal! /(\r:noh\rvi("<cr>
+  autocmd FileType javascript onoremap <buffer> il( :<c-u>execute "normal! ?)\r:noh\rvi)"<cr>
+augroup END
 
 " onoremap in( :<c-u>normal! f(vi(<cr>
 " onoremap in) :<c-u>normal! f(vi(<cr>
