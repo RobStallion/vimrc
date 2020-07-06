@@ -10,7 +10,7 @@ set smartcase " override ignorecase if search contains upper case char
 set noswapfile " no swp files :D
 set incsearch " get results while searching :D
 set hlsearch " hightlight search results
-set colorcolumn=100 " set a column off 100 length
+" set colorcolumn=100 " set a column off 100 length
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
