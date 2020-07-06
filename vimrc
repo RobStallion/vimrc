@@ -2,7 +2,7 @@ syntax on " enable syntax
 
 filetype plugin on " allow filetype plugins
 
-" Vimscript remappings {{{
+" Mappings {{{
 let mapleader=" "
 
 nnoremap ; :
@@ -15,7 +15,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 vnoremap Y "+y
 " }}}
 
-" Vimscript file settings {{{
+" Basic Settings {{{
 augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
@@ -46,7 +46,7 @@ set statusline+=/ " Separator
 set statusline+=%L " Total lines
 " }}}
 
-" Vimscript colour settings {{{
+" Colour Settings {{{
 set termguicolors " uses highlight-guifg and highlight-guibg attributes
 
 highlight ColorColumn ctermbg=none guibg=lightgrey
