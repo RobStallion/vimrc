@@ -57,7 +57,6 @@ highlight ALEWarning ctermbg=none cterm=none gui=undercurl,bold guifg=cyan
 highlight MatchParen ctermbg=none guifg=red guibg=NONE gui=bold
 " }}}
 
-
 " THINGS I'M CURRENTLY TESTING
 
 " jump to the begining of a line
@@ -75,4 +74,3 @@ augroup filetype_javascript
   autocmd FileType javascript onoremap <buffer> in( :<c-u>execute "normal! /(\r:noh\rvi("<cr>
   autocmd FileType javascript onoremap <buffer> il( :<c-u>execute "normal! ?)\r:noh\rvi)"<cr>
 augroup END
-
