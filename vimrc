@@ -74,3 +74,9 @@ augroup filetype_javascript
   autocmd FileType javascript onoremap <buffer> in( :<c-u>execute "normal! /(\r:noh\rvi("<cr>
   autocmd FileType javascript onoremap <buffer> il( :<c-u>execute "normal! ?)\r:noh\rvi)"<cr>
 augroup END
+
+" function CreateNextIn(str)
+"   execute "onoremap <buffer> in" . a:str . " :<c-u>execute \"normal! /" . a:str . "\r:noh\rvi" . a:str . "\"<cr>"
+" endfunction
+
+" call CreateNextIn('[')
