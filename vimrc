@@ -66,31 +66,30 @@ nnoremap H ^
 " jump to the end of a line
 nnoremap L $
 
-" create operators to select in or around next ( { [ ' "
-" in == in next
-" il == in last
+let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
+
+function InNext(str) abort
+  execute 'onoremap <buffer> in'.a:str.' :<c-u>execute "normal! /'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
+endfunction
+
+function InLast(str) abort
+  execute 'onoremap <buffer> il'.a:str.' :<c-u>execute "normal! ?'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
+endfunction
+
+function CreateOperatorPendingMappings()
+  for i in s:pairedPunctuation
+    call InNext(i)
+    call InLast(i)
+  endfor
+endfunction
 
 augroup filetype_javascript
   autocmd! filetype_javascript
-  autocmd FileType javascript onoremap <buffer> in( :<c-u>execute "normal! /(\r:noh\rvi("<cr>
-  autocmd FileType javascript onoremap <buffer> il( :<c-u>execute "normal! ?)\r:noh\rvi)"<cr>
-  autocmd FileType javascript call CreateInNext('[')
-  autocmd FileType javascript call CreateInLast(']')
+  autocmd FileType javascript call CreateOperatorPendingMappings()
+  autocmd FileType javascript onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
+  autocmd FileType javascript onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
 augroup END
 
-function CreateInNext(str)
-  let l:p1 = 'onoremap <buffer> in'
-  let l:p2 = ' :<c-u>execute "normal! /'
-  let l:p3 = '\r:noh\rvi' 
-  let l:p4 = '"<cr>'
-
-  execute l:p1.a:str.l:p2.a:str.l:p3.a:str.l:p4
-endfunction
-
-function CreateInLast(str)
-  execute 'onoremap <buffer> il'.a:str.' :<c-u>execute "normal! ?'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
-endfunction
- 
 " This marks (m) the current cursor position to q
 " goes to end of line and adds a semi-colon
 " go back to marked cursor position (`) q
