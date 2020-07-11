@@ -14,3 +14,7 @@ console.log(timesTwo(5))
 console.log(timesFour(5))
 console.log(timesEight(5))
 console.log(square(5))
+
+const arr1 = [1,2,3,4,5]
+const arr2 = ['str1', 'str2']
+const arr3 = ["str1", "str2"]
