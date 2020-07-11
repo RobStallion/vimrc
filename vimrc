@@ -37,8 +37,9 @@ set hlsearch " hightlight search results
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
-set laststatus=2 " adds status bar to bottom of screen (2 is always, see help)
+" set relativenumber 
 
+set laststatus=2 " adds status bar to bottom of screen (2 is always, see help)
 set statusline=%f " Path to the file
 set statusline+=%= " Switch to the right side
 set statusline+=%l " Current line
@@ -73,14 +74,23 @@ augroup filetype_javascript
   autocmd! filetype_javascript
   autocmd FileType javascript onoremap <buffer> in( :<c-u>execute "normal! /(\r:noh\rvi("<cr>
   autocmd FileType javascript onoremap <buffer> il( :<c-u>execute "normal! ?)\r:noh\rvi)"<cr>
+  autocmd FileType javascript call CreateInNext('[')
+  autocmd FileType javascript call CreateInLast(']')
 augroup END
 
-" function CreateNextIn(str)
-"   execute "onoremap <buffer> in" . a:str . " :<c-u>execute \"normal! /" . a:str . "\r:noh\rvi" . a:str . "\"<cr>"
-" endfunction
+function CreateInNext(str)
+  let l:p1 = 'onoremap <buffer> in'
+  let l:p2 = ' :<c-u>execute "normal! /'
+  let l:p3 = '\r:noh\rvi' 
+  let l:p4 = '"<cr>'
 
-" call CreateNextIn('[')
-"
+  execute l:p1.a:str.l:p2.a:str.l:p3.a:str.l:p4
+endfunction
+
+function CreateInLast(str)
+  execute 'onoremap <buffer> il'.a:str.' :<c-u>execute "normal! ?'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
+endfunction
+ 
 " This marks (m) the current cursor position to q
 " goes to end of line and adds a semi-colon
 " go back to marked cursor position (`) q
