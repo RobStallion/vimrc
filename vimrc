@@ -9,7 +9,7 @@ nnoremap ; :
 
 " edit & source vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>:nohlsearch<cr>
 
 " copy to clipboard
 vnoremap Y "+y
@@ -53,10 +53,13 @@ set hlsearch " hightlight search results
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
-" set relativenumber
+set relativenumber
 
-set laststatus=2 " adds status bar to bottom of screen (2 is always, see help)
-set statusline=%f " Path to the file
+set laststatus=2 " adds status bar to bottom of screen (2 is always, see :help)
+
+let g:currentDirectory = split(getcwd(), '/')[-1]
+set statusline=%{g:currentDirectory}/
+set statusline+=%f " Path to the file
 set statusline+=%= " Switch to the right side
 set statusline+=%l " Current line
 set statusline+=/ " Separator
