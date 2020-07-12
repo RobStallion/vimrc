@@ -13,6 +13,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " copy to clipboard
 vnoremap Y "+y
+
+" remove highlighted search
+nnoremap H :nohlsearch<cr>
+
 " }}}
 
 " Basic Settings {{{
@@ -57,14 +61,6 @@ highlight ALEError ctermbg=none cterm=none gui=undercurl,bold guisp=red
 highlight ALEWarning ctermbg=none cterm=none gui=undercurl,bold guifg=cyan
 highlight MatchParen ctermbg=none guifg=red guibg=NONE gui=bold
 " }}}
-
-" THINGS I'M CURRENTLY TESTING
-
-" jump to the begining of a line
-nnoremap H ^
-
-" jump to the end of a line
-nnoremap L $
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
 
