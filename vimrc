@@ -17,6 +17,15 @@ vnoremap Y "+y
 " remove highlighted search
 nnoremap H :nohlsearch<cr>
 
+" error match for trailing whitespace
+nnoremap <leader>w :match Error /\v\s+$/<cr>
+
+" clear error match
+nnoremap <leader>W :match none<cr>
+
+" remove trailing whitespace and remove highlighted search
+nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>
+
 " }}}
 
 " Basic Settings {{{
@@ -28,7 +37,7 @@ augroup END
 set backspace=indent,eol,start " ensure backspace works in insert mode
 set belloff=all " no err sounds
 set tabstop=2 softtabstop=2 " tab is 2 spaces long set
-set shiftwidth=2 " shift with < > does 2 spaces 
+set shiftwidth=2 " shift with < > does 2 spaces
 set expandtab " converts tab to spaces
 set smartindent " does best to not be bad at indenting
 set number " set line numbers
@@ -41,7 +50,7 @@ set hlsearch " hightlight search results
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
-" set relativenumber 
+" set relativenumber
 
 set laststatus=2 " adds status bar to bottom of screen (2 is always, see help)
 set statusline=%f " Path to the file
