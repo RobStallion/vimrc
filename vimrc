@@ -26,6 +26,9 @@ nnoremap <leader>W :match none<cr>
 " remove trailing whitespace and remove highlighted search
 nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>
 
+" automatically make vim search use 'regular' regex
+nnoremap / /\v
+
 " }}}
 
 " Basic Settings {{{
