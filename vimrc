@@ -24,7 +24,7 @@ nnoremap <leader>w :match Error /\v\s+$/<cr>
 nnoremap <leader>W :match none<cr>
 
 " remove trailing whitespace and remove highlighted search
-nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>
+nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>:w<cr>
 
 " automatically make vim search use 'regular' regex
 nnoremap / /\v
@@ -59,7 +59,7 @@ set cursorline " highlight the text line of the cursor
 set laststatus=2 " adds status bar to bottom of screen (2 is always, see :help)
 let g:currentDirectory = split(getcwd(), '/')[-1]
 set statusline=%{g:currentDirectory}/
-set statusline+=%f " Path to the file
+set statusline=%f " Path to the file
 set statusline+=%= " Switch to the right side
 set statusline+=%l " Current line
 set statusline+=/ " Separator
