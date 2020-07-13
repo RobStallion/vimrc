@@ -94,11 +94,11 @@ function CreateOperatorPendingMappings()
   endfor
 endfunction
 
-augroup filetype_javascript
-  autocmd! filetype_javascript
-  autocmd FileType javascript call CreateOperatorPendingMappings()
-  autocmd FileType javascript onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
-  autocmd FileType javascript onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
+augroup operator_pending
+  autocmd! operator_pending
+  call CreateOperatorPendingMappings()
+  onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
+  onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
 augroup END
 
 " This marks (m) the current cursor position to q
