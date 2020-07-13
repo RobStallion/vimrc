@@ -16,7 +16,3 @@ function! s:GrepOperator(type)
 
   let @@ = saved_unnamed_register
 endfunction
-
-
-BlahBlahBlah
-blahblahblah

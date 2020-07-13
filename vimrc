@@ -29,6 +29,9 @@ nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>
 " automatically make vim search use 'regular' regex
 nnoremap / /\v
 
+" creates mapping to turn relative number on and off quickly
+nnoremap <leader>R :setlocal relativenumber!<cr>
+
 " }}}
 
 " Basic Settings {{{
@@ -49,14 +52,11 @@ set smartcase " override ignorecase if search contains upper case char
 set noswapfile " no swp files :D
 set incsearch " get results while searching :D
 set hlsearch " hightlight search results
-" set colorcolumn=100 " set a column off 100 length
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
-set relativenumber
 
 set laststatus=2 " adds status bar to bottom of screen (2 is always, see :help)
-
 let g:currentDirectory = split(getcwd(), '/')[-1]
 set statusline=%{g:currentDirectory}/
 set statusline+=%f " Path to the file
