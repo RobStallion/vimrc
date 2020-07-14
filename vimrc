@@ -29,8 +29,11 @@ nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>:w<cr>
 " automatically make vim search use 'regular' regex
 nnoremap / /\v
 
-" creates mapping to turn relative number on and off quickly
+" toggle relative number
 nnoremap <leader>R :setlocal relativenumber!<cr>
+
+" toggle spellcheck
+nnoremap <leader>SC :set spell!<cr>
 
 " }}}
 
