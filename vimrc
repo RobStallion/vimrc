@@ -100,10 +100,3 @@ augroup operator_pending
   onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
   onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
 augroup END
-
-" This marks (m) the current cursor position to q
-" goes to end of line and adds a semi-colon
-" go back to marked cursor position (`) q
-" :execute "normal! mqA;\<esc>`q"
-" Don't see myself using this particular command but keeping as a reminder.
-" Feel like this could be helpful in future
