@@ -35,6 +35,9 @@ nnoremap <leader>R :setlocal relativenumber!<cr>
 " toggle spellcheck
 nnoremap <leader>SC :set spell!<cr>
 
+" Create terminal
+nnoremap <leader>t :call CreateTerm()<cr>
+
 " }}}
 
 " Basic Settings {{{
@@ -103,3 +106,13 @@ augroup operator_pending
   onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
   onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
 augroup END
+
+" function to create a terminal window at the bottom of the screen with a
+" fixed height
+function CreateTerm()
+  set splitbelow
+  term
+  set nosplitbelow
+  resize 15
+  set winfixheight
+endfunction
