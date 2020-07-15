@@ -117,9 +117,6 @@ augroup END
 " function to create a terminal window at the bottom of the screen with a
 " fixed height
 function CreateTerm()
-  set splitbelow
-  term
-  set nosplitbelow
+  botright terminal
   resize 15
-  set winfixheight
 endfunction
