@@ -38,6 +38,10 @@ nnoremap <leader>SC :set spell!<cr>
 " Create terminal
 nnoremap <leader>t :call CreateTerm()<cr>
 
+" paste new word on line below or above
+nnoremap <leader>p o<esc>p
+nnoremap <leader>P O<esc>p
+
 " }}}
 
 " Basic Settings {{{
@@ -61,6 +65,7 @@ set hlsearch " hightlight search results
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
+set relativenumber " set relative number by default
 
 set laststatus=2 " adds status bar to bottom of screen (2 is always, see :help)
 let g:currentDirectory = split(getcwd(), '/')[-1]
