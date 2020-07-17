@@ -2,6 +2,23 @@ syntax on " enable syntax
 
 filetype plugin on " allow filetype plugins
 
+let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
+
+function InNext(str) abort
+  execute 'onoremap <buffer> in'.a:str.' :<c-u>execute "normal! /'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
+endfunction
+
+function InLast(str) abort
+  execute 'onoremap <buffer> il'.a:str.' :<c-u>execute "normal! ?'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
+endfunction
+
+function CreateOperatorPendingMappings()
+  for i in s:pairedPunctuation
+    call InNext(i)
+    call InLast(i)
+  endfor
+endfunction
+
 " Mappings {{{
 let mapleader=" "
 
@@ -41,6 +58,11 @@ nnoremap <leader>t :call CreateTerm()<cr>
 " paste new word on line below or above
 nnoremap <leader>p o<esc>p
 nnoremap <leader>P O<esc>p
+
+" create next in operator pendings
+call CreateOperatorPendingMappings()
+onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
+onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
 
 " }}}
 
@@ -89,30 +111,6 @@ highlight ALEError ctermbg=none cterm=none gui=undercurl,bold guisp=red
 highlight ALEWarning ctermbg=none cterm=none gui=undercurl,bold guifg=cyan
 highlight MatchParen ctermbg=none guifg=red guibg=NONE gui=bold
 " }}}
-
-let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
-
-function InNext(str) abort
-  execute 'onoremap <buffer> in'.a:str.' :<c-u>execute "normal! /'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
-endfunction
-
-function InLast(str) abort
-  execute 'onoremap <buffer> il'.a:str.' :<c-u>execute "normal! ?'.a:str.'\r:noh\rvi'.a:str.'"<cr>'
-endfunction
-
-function CreateOperatorPendingMappings()
-  for i in s:pairedPunctuation
-    call InNext(i)
-    call InLast(i)
-  endfor
-endfunction
-
-augroup operator_pending
-  autocmd! operator_pending
-  call CreateOperatorPendingMappings()
-  onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
-  onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
-augroup END
 
 " function to create a terminal window at the bottom of the screen with a
 " fixed height
