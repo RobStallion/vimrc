@@ -1,5 +1,3 @@
-syntax on " enable syntax
-
 filetype plugin on " allow filetype plugins
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
@@ -90,8 +88,6 @@ set cursorline " highlight the text line of the cursor
 set relativenumber " set relative number by default
 
 set laststatus=2 " adds status bar to bottom of screen (2 is always, see :help)
-let g:currentDirectory = split(getcwd(), '/')[-1]
-set statusline=%{g:currentDirectory}/
 set statusline=%f " Path to the file
 set statusline+=%= " Switch to the right side
 set statusline+=%l " Current line
@@ -102,7 +98,10 @@ set iskeyword+=- " allows hypenated words to be treated as a vim word text objec
 " }}}
 
 " Colour Settings {{{
+syntax on " enable syntax
+
 set termguicolors " uses highlight-guifg and highlight-guibg attributes
+colorscheme onehalfdark
 
 highlight ColorColumn ctermbg=none guibg=lightgrey
 highlight CursorLine ctermbg=none gui=underline guibg=NONE
