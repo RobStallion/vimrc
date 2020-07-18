@@ -27,7 +27,7 @@ nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>:nohlsearch<cr>
 
 " copy to clipboard
-vnoremap Y "+y
+vnoremap <c-c> "+y
 
 " remove highlighted search
 nnoremap H :nohlsearch<cr>
@@ -56,6 +56,9 @@ nnoremap <leader>t :call CreateTerm()<cr>
 " paste new word on line below or above
 nnoremap <leader>p o<esc>p
 nnoremap <leader>P O<esc>p
+
+" yank till the end of the line
+nnoremap Y Du
 
 " create next in operator pendings
 call CreateOperatorPendingMappings()
