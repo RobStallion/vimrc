@@ -67,6 +67,15 @@ onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
 
 " }}}
 
+" Terminal Mode Mappings {{{
+
+" quickly scroll through terminal logs
+tnoremap kk <c-w>N
+
+" quick exit
+tnoremap <c-c><c-c> exit<cr>
+" }}}
+
 " Basic Settings {{{
 augroup filetype_vim
   autocmd!
