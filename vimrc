@@ -97,7 +97,7 @@ set hlsearch " hightlight search results
 set wildmenu " display all matching files when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
-set relativenumber " set relative number by default
+" set relativenumber " set relative number by default
 
 set laststatus=2 " adds status bar to bottom of screen (2 is always, see :help)
 set statusline=%f " Path to the file
