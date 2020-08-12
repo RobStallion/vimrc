@@ -48,7 +48,7 @@ nnoremap / /\v
 nnoremap <leader>R :setlocal relativenumber!<cr>
 
 " toggle spellcheck
-nnoremap <leader>SC :set spell!<cr>
+nnoremap <leader>sc :set spell!<cr>
 
 " Create terminal
 nnoremap <leader>t :call CreateTerm()<cr>
