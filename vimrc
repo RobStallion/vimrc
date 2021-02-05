@@ -1,4 +1,4 @@
-filetype plugin on " allow filetype plugins
+filetype plugin indent on " allow filetype plugins
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
 
@@ -20,6 +20,7 @@ endfunction
 " Mappings {{{
 let mapleader=" "
 
+" map ; to : in normal mode
 nnoremap ; :
 
 " edit & source vimrc
@@ -42,7 +43,7 @@ nnoremap <leader>W :match none<cr>
 nnoremap <leader>rtw :%s/\v\s+$//g<cr>:nohlsearch<cr>:w<cr>
 
 " automatically make vim search use 'regular' regex
-nnoremap / /\v
+" nnoremap / /\v
 
 " toggle relative number
 nnoremap <leader>R :setlocal relativenumber!<cr>
@@ -64,7 +65,6 @@ nnoremap Y Du
 call CreateOperatorPendingMappings()
 onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
 onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
-
 " }}}
 
 " Terminal Mode Mappings {{{
@@ -92,9 +92,9 @@ set number " set line numbers
 set ignorecase " ignore case in search patterns
 set smartcase " override ignorecase if search contains upper case char
 set noswapfile " no swp files :D
-set incsearch " get results while searching :D
+set incsearch " shows matched string as you are typing it
 set hlsearch " hightlight search results
-set wildmenu " display all matching files when using tab complete
+set wildmenu " shows menu when using tab complete
 set path+=** " search down into subfolders
 set cursorline " highlight the text line of the cursor
 " set relativenumber " set relative number by default
@@ -107,6 +107,9 @@ set statusline+=/ " Separator
 set statusline+=%L " Total lines
 
 set iskeyword+=- " allows hypenated words to be treated as a vim word text object
+set history=1000 " keep 1000 items in the history
+set scrolloff=7 " keeps lines above and below the cursor
+set linebreak " stops vim from wrapping mid word"
 " }}}
 
 " Colour Settings {{{
@@ -122,6 +125,9 @@ highlight ALEError ctermbg=none cterm=none gui=undercurl,bold guisp=red
 highlight ALEWarning ctermbg=none cterm=none gui=undercurl,bold guifg=cyan
 highlight MatchParen ctermbg=none guifg=red guibg=NONE gui=bold
 " }}}
+
+let g:go_fmt_command = "goimports" " Run goimports along gofmt on each save
+let g:go_auto_type_info = 1 " Automatically get signature/type info for object under cursor
 
 " function to create a terminal window at the bottom of the screen with a
 " fixed height

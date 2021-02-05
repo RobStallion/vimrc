@@ -19,3 +19,6 @@
 [submodule "pack/my-plugins/start/auto-pairs"]
 	path = pack/my-plugins/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "pack/my-plugins/start/emmet-vim"]
+	path = pack/my-plugins/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
