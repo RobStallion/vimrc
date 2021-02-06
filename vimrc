@@ -133,7 +133,7 @@ set statusline+=%L " Total lines
 
 set iskeyword+=- " allows hypenated words to be treated as a vim word text object
 set history=1000 " keep 1000 items in the history
-set scrolloff=7 " keeps lines above and below the cursor
+set scrolloff=10 " keeps lines above and below the cursor
 set linebreak " stops vim from wrapping mid word
 set splitright " opens new window to the right
 set showcmd " display incomplele command in bottom right of screen
