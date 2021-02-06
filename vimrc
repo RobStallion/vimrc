@@ -162,3 +162,8 @@ function CreateTerm()
   botright terminal
   resize 15
 endfunction
+
+" I installed Emmet for help creating tags. This however added commands that
+" no longer let me use E as the shortest unambiguous command for Explore. This
+" abbreviation let's me use E again in command mode
+cabbrev E Explore
