@@ -18,6 +18,7 @@ function CreateOperatorPendingMappings()
 endfunction
 
 " Mappings {{{
+" change default leader. Make first mapping to keep all leaders same in file
 let mapleader=" "
 
 " map ; to : in normal mode
@@ -61,10 +62,33 @@ nnoremap <leader>P O<esc>p
 " yank till the end of the line
 nnoremap Y Du
 
-" create next in operator pendings
+" create in next & in last operator pendings
 call CreateOperatorPendingMappings()
 onoremap <buffer> in" :<c-u>execute "normal! /\"\r:noh\rvi\""<cr>
 onoremap <buffer> il" :<c-u>execute "normal! ?\"\r:noh\rvi\""<cr>
+
+" shortcuts to navigate vim windows quicker
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" mappings to control window size
+" Vim will not allow the key mappings I would like for these mappings
+" so to get around this limitation, I have created key mappings in my
+" terminal which return the map commands below with the key strokes I
+" I wanted to put in my mappings originally. Purposefully chose
+" ridiculous (but also VERY clear) mappings that would never normally 
+" be helpful as the terminal returns them for me.
+"
+" actual shortcut is CTRL+.
+nnoremap <leader>\\wider> <C-w>>
+" actual shortcut is CTRL+,
+nnoremap <leader>\\narrow< <C-w><
+" actual shortcut is CTRL+=
+nnoremap <leader>\\taller+ <C-w>+
+" actual shortcut is CTRL+-
+nnoremap <leader>\\shorter- <C-w>-
 " }}}
 
 " Terminal Mode Mappings {{{
@@ -87,6 +111,7 @@ set belloff=all " no err sounds
 set tabstop=2 softtabstop=2 " tab is 2 spaces long set
 set shiftwidth=2 " shift with < > does 2 spaces
 set expandtab " converts tab to spaces
+set autoindent " matches current indent level (testing to see if it helps autoindent)
 set smartindent " does best to not be bad at indenting
 set number " set line numbers
 set ignorecase " ignore case in search patterns
@@ -109,7 +134,9 @@ set statusline+=%L " Total lines
 set iskeyword+=- " allows hypenated words to be treated as a vim word text object
 set history=1000 " keep 1000 items in the history
 set scrolloff=7 " keeps lines above and below the cursor
-set linebreak " stops vim from wrapping mid word"
+set linebreak " stops vim from wrapping mid word
+set splitright " opens new window to the right
+set showcmd " display incomplele command in bottom right of screen
 " }}}
 
 " Colour Settings {{{
