@@ -73,6 +73,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" my buffer shortcut overwrites a default vim mapping which clears and 
+" redraws the screen. This mapping adds it back in but with leader 
+" in place of control
+nnoremap <leader>l :redraw!<cr>
+
 " mappings to control window size
 " Vim will not allow the key mappings I would like for these mappings
 " so to get around this limitation, I have created key mappings in my
@@ -153,9 +158,6 @@ highlight ALEWarning ctermbg=none cterm=none gui=undercurl,bold guifg=cyan
 highlight MatchParen ctermbg=none guifg=red guibg=NONE gui=bold
 " }}}
 
-let g:go_fmt_command = "goimports" " Run goimports along gofmt on each save
-let g:go_auto_type_info = 1 " Automatically get signature/type info for object under cursor
-
 " function to create a terminal window at the bottom of the screen with a
 " fixed height
 function CreateTerm()
@@ -167,3 +169,5 @@ endfunction
 " no longer let me use E as the shortest unambiguous command for Explore. This
 " abbreviation let's me use E again in command mode
 cabbrev E Explore
+
+set rtp+=/usr/local/opt/fzf
