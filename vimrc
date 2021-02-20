@@ -113,9 +113,8 @@ augroup END
 
 set backspace=indent,eol,start " ensure backspace works in insert mode
 set belloff=all " no err sounds
-set tabstop=2 softtabstop=2 " tab is 2 spaces long set
+set tabstop=2 softtabstop=2 expandtab " convert tabs to spaces and set to 2 spaces 
 set shiftwidth=2 " shift with < > does 2 spaces
-set expandtab " converts tab to spaces
 set autoindent " matches current indent level (testing to see if it helps autoindent)
 set smartindent " does best to not be bad at indenting
 set number " set line numbers
