@@ -1,3 +1,3 @@
 augroup JavascriptFileDetect
-  autocmd BufNewFile,BufReadPost *.js,*jsx setfiletype javascript
+  autocmd BufNewFile,BufReadPost *.js,*.jsx set filetype=javascript
 augroup end
