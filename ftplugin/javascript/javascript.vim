@@ -1,10 +1,10 @@
 let b:ale_linters = {
-\   'javascript': ['prettier'],
+\   'javascript': ['eslint'],
 \   'javascriptreact': ['eslint'],
 \}
 
 let b:ale_fixers = {
-\   'javascript': ['prettier'],
+\   'javascript': ['eslint'],
 \   'javascriptreact': ['eslint'],
 \}
 
@@ -16,4 +16,9 @@ let b:ale_fix_on_save = 1
 " let g:prettier#config#semi = 'false'
 " let g:prettier#config#single_quote = 'true'
 
-iabbrev log console.log()<left>
+func Eatchar(pattern)
+  let char = nr2char(getchar(0))
+  return (char =~ a:pattern) ? '' : char
+endfunc
+
+iabbrev log console.log()<left><c-r>=Eatchar('\s')<cr>

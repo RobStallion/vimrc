@@ -26,13 +26,13 @@ nnoremap ; :
 
 " edit & source vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>:nohlsearch<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:nohlsearch<cr>
 
 " copy to clipboard
 vnoremap <c-c> "+y
 
 " remove highlighted search
-nnoremap H :nohlsearch<cr>
+nnoremap <silent> H :nohlsearch<cr>
 
 " error match for trailing whitespace
 nnoremap <leader>w :match Error /\v\s+$/<cr>
