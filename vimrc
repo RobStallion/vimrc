@@ -94,6 +94,9 @@ nnoremap <leader>\\narrow< <C-w><
 nnoremap <leader>\\taller+ <C-w>+
 " actual shortcut is CTRL+-
 nnoremap <leader>\\shorter- <C-w>-
+
+" set fold level to something quickly
+nnoremap <leader>sfl :set foldlevel=
 " }}}
 
 " Terminal Mode Mappings {{{
