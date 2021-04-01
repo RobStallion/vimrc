@@ -171,3 +171,5 @@ function CreateTerm()
 endfunction
 
 set rtp+=/usr/local/opt/fzf
+
+nnoremap <c-f> :Files<cr>
