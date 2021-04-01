@@ -5,12 +5,6 @@ let b:ale_fixers = ['eslint', 'remove_trailing_lines', 'trim_whitespace']
 let b:ale_linters_explicit = 1
 " let b:ale_fix_on_save = 1
 
-" if filereadable(".eslintrc") == 0
-"   let b:ale_linters = {
-"   \   'javascript': ['prettier'],
-"   \}
-" endif
-
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all --no-semi'
 let g:prettier#config#tab_width = '2'
 let g:prettier#config#semi = 'false'
