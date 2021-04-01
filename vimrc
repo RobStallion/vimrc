@@ -104,6 +104,9 @@ nnoremap <leader>sfl :set foldlevel=
 " quickly scroll through terminal logs
 tnoremap kk <c-w>N
 
+" shortcuts to navigate vim windows quicker
+tnoremap <c-k> <c-w><c-k>
+
 " quick exit
 " tnoremap <c-c><c-c> exit<cr>
 " }}}
