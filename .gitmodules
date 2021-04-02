@@ -19,3 +19,6 @@
 [submodule "pack/my-plugins/start/fzf.vim"]
 	path = pack/my-plugins/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/my-plugins/start/vim-css-color"]
+	path = pack/my-plugins/start/vim-css-color
+	url = https://github.com/skammer/vim-css-color.git
