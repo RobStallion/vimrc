@@ -22,3 +22,6 @@
 [submodule "pack/my-plugins/start/vim-css-color"]
 	path = pack/my-plugins/start/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
+[submodule "pack/my-plugins/start/coc.nvim"]
+	path = pack/my-plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
