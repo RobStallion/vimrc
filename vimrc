@@ -173,3 +173,7 @@ endfunction
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <c-f> :Files<cr>
+
+set textwidth=80
+
+nnoremap <C-_> ifoobar<esc>
