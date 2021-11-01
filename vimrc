@@ -4,8 +4,6 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-filetype plugin indent on " allow filetype plugins
-
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
 
 function InNext(str) abort
@@ -161,8 +159,6 @@ set showcmd " display incomplele command in bottom right of screen
 " }}}
 
 " Colour Settings {{{
-syntax on " enable syntax
-
 set termguicolors " uses highlight-guifg and highlight-guibg attributes
 colorscheme onehalfdark
 
