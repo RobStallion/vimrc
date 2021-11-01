@@ -1,7 +1,9 @@
 call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
