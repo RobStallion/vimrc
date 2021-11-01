@@ -121,6 +121,7 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+set textwidth=80 "the maximum allowed width of a line
 set backspace=indent,eol,start " ensure backspace works in insert mode
 set belloff=all " no err sounds
 set tabstop=2 softtabstop=2 expandtab " convert tabs to spaces and set to 2 spaces 
@@ -174,10 +175,10 @@ function CreateTerm()
   resize 15
 endfunction
 
+" search files quickly with fzf
 set rtp+=/usr/local/opt/fzf
-
 nnoremap <c-f> :Files<cr>
 
-set textwidth=80
-
+" mapping for control forwardslash
+" here as a reminder for me
 nnoremap <C-_> ifoobar<esc>
