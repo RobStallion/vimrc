@@ -97,6 +97,10 @@ nnoremap <leader>\\shorter- <C-w>-
 
 " set fold level to something quickly
 nnoremap <leader>sfl :set foldlevel=
+
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
+
 " }}}
 
 " Terminal Mode Mappings {{{
