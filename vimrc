@@ -1,3 +1,9 @@
+call plug#begin()
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 filetype plugin indent on " allow filetype plugins
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
