@@ -4,6 +4,11 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'ap/vim-css-color', { 'for': ['css'] }
+" post install then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do':
+  \ 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'json', 'markdown', 'yaml', 'html'] }
+
 call plug#end()
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
