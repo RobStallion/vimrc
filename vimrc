@@ -1,13 +1,20 @@
 call plug#begin()
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
+
+" ALL FILE TYPES
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'ap/vim-css-color', { 'for': ['css'] }
-" post install then load plugin only for editing supported files
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+" post install
+" load plugin only on specific filetypes
 Plug 'prettier/vim-prettier', { 'do':
   \ 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'json', 'markdown', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'json', 'markdown', 'yaml', 'html']
+  \ }
+
+" Prisma
+Plug 'pantharshit00/vim-prisma', { 'for': ['prisma'] }
 
 call plug#end()
 
@@ -84,8 +91,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" my buffer shortcut overwrites a default vim mapping which clears and 
-" redraws the screen. This mapping adds it back in but with leader 
+" my buffer shortcut overwrites a default vim mapping which clears and
+" redraws the screen. This mapping adds it back in but with leader
 " in place of control
 nnoremap <leader>l :redraw!<cr>
 
@@ -94,7 +101,7 @@ nnoremap <leader>l :redraw!<cr>
 " so to get around this limitation, I have created key mappings in my
 " terminal which return the map commands below with the key strokes I
 " I wanted to put in my mappings originally. Purposefully chose
-" ridiculous (but also VERY clear) mappings that would never normally 
+" ridiculous (but also VERY clear) mappings that would never normally
 " be helpful as the terminal returns them for me.
 "
 " actual shortcut is CTRL+.
@@ -135,7 +142,7 @@ augroup END
 set textwidth=80 "the maximum allowed width of a line
 set backspace=indent,eol,start " ensure backspace works in insert mode
 set belloff=all " no err sounds
-set tabstop=2 softtabstop=2 expandtab " convert tabs to spaces and set to 2 spaces 
+set tabstop=2 softtabstop=2 expandtab " convert tabs to spaces and set to 2 spaces
 set shiftwidth=2 " shift with < > does 2 spaces
 set autoindent " matches current indent level (testing to see if it helps autoindent)
 set smartindent " does best to not be bad at indenting
