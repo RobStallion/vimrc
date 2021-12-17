@@ -118,8 +118,8 @@ nnoremap <leader>\\shorter- <C-w>-
 " set fold level to something quickly
 nnoremap <leader>sfl :set foldlevel=
 
-nnoremap <leader>o o<esc>
-nnoremap <leader>O O<esc>
+nnoremap <leader>o o<esc>k
+nnoremap <leader>O O<esc>j
 
 " }}}
 
@@ -194,8 +194,8 @@ function CreateTerm()
 endfunction
 
 " search files quickly with fzf
-set rtp+=/usr/local/opt/fzf
 nnoremap <c-f> :Files<cr>
+nnoremap <c-s> :Rg<cr>
 
 " mapping for control forwardslash
 " here as a reminder for me
