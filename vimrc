@@ -18,6 +18,9 @@ Plug 'prettier/vim-prettier', { 'do':
 " Prisma
 Plug 'pantharshit00/vim-prisma', { 'for': ['prisma'] }
 
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' , 'for': ['markdown'] }
+
 call plug#end()
 
 let s:pairedPunctuation = ['(', ')', '[', ']', '{', '}', '\', '''']
